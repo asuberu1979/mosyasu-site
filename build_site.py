@@ -275,6 +275,10 @@ def page_mosyasu(cfg, data):
     {f'<p class="creator-role">{esc(cr["role"])}</p>' if cr.get("role") else ''}{f'<p class="creator-bio">{esc(cr["bio"])}</p>' if cr.get("bio") else ''}</div>
   </section>'''
     works = [w for w in m.get('works', []) if w.get('youtube_id')]
+    pn = m.get('production_note') or {}
+    prod_html = ''
+    if pn.get('items'):
+        prod_html = f'<div class="prod-note"><h3>{esc(pn.get("title", ""))}</h3><ul>' + ''.join(f'<li>{esc(x)}</li>' for x in pn['items']) + '</ul></div>'
     works_html = f'<section class="block" id="works-pick"><h2>制作例</h2><div class="works">{"".join(yt_embed(w) for w in works)}</div></section>' if works else ''
     return head(cfg, f'{m["name"]} | {m["catch"]}', m['lead'], 'mosyasu.html', 'is-blue', header or 'assets/logo/icon-512.png') + nav(cfg, 'mosyasu') + f'''<main>
   <section class="{hero_cls}">
@@ -293,6 +297,7 @@ def page_mosyasu(cfg, data):
     <h2>できること</h2>
     <div class="svc-grid">{services}</div>
     {f'<p class="note">{esc(m["price_note"])}</p>' if m.get("price_note") else ''}
+    {prod_html}
   </section>
 
   {works_html}

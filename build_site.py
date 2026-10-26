@@ -341,6 +341,22 @@ def page_eris(cfg, data):
     visual = f'<img class="hero-bg" src="{img}" alt="{esc(e["name"])}">' if img else '<div class="hero-flame" aria-hidden="true">焔</div>'
     hero_cls = 'hero hero-red hero-banner' if img else 'hero hero-red'
     prof = ''.join(f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in e.get('profile', []) if v)
+    es = e.get('essence') or {}
+    essence = ''
+    if es.get('outer') and es.get('inner'):
+        side = lambda x, cls: f'''<div class="ess-side {cls}"><span class="ess-label">{esc(x.get("label", ""))}</span><span class="ess-word">{esc(x.get("word", ""))}</span>
+      <ul>{"".join(f"<li>{esc(t)}</li>" for t in x.get("traits", []))}</ul></div>'''
+        essence = f'''<section class="block" id="essence">
+    <h2>人物</h2>
+    {f'<p class="ess-summary">{esc(es["summary"])}</p>' if es.get("summary") else ''}
+    <div class="ess">{side(es["outer"], "is-outer")}{side(es["inner"], "is-inner")}</div>
+    {f'<p class="ess-motto">{esc(es["motto"])}</p>' if es.get("motto") else ''}
+  </section>'''
+    quotes = e.get('quotes') or []
+    quotes_html = ''
+    if quotes:
+        quotes_html = '<section class="block" id="words"><h2>エリスの言葉</h2><div class="quotes">' + ''.join(
+            f'<blockquote>「{esc(q)}」</blockquote>' for q in quotes) + '</div></section>'
     music = []
     for s in e.get('music', []):
         if s.get('youtube_id'):
@@ -364,7 +380,11 @@ def page_eris(cfg, data):
     {visual}
   </section>
 
+  {essence}
+
   {f'<section class="block" id="profile"><h2>プロフィール</h2><dl class="prof">{prof}</dl></section>' if prof else ''}
+
+  {quotes_html}
 
   <section class="block" id="latest">
     <h2>最新の動画</h2>

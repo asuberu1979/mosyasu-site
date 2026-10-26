@@ -104,9 +104,9 @@ def fetch_all(cfg):
 
 
 # ── 部品 ─────────────────────────────────────────
-def head(cfg, title, desc, page, accent):
+def head(cfg, title, desc, page, accent, og_image='assets/logo/icon-512.png'):
     base = cfg['site'].get('base_url', '').rstrip('/')
-    og_img = f'{base}/assets/logo/icon-512.png' if base else 'assets/logo/icon-512.png'
+    og_img = f'{base}/{og_image}' if base else og_image
     canonical = f'<link rel="canonical" href="{esc(base)}/{page}">' if base else ''
     return f'''<!doctype html>
 <html lang="ja">
@@ -120,7 +120,7 @@ def head(cfg, title, desc, page, accent):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:image" content="{esc(og_img)}">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{'summary_large_image' if 'eris/' in og_image else 'summary'}">
 {canonical}
 <link rel="icon" href="assets/logo/emblem_on_dark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -195,7 +195,7 @@ def page_index(cfg):
     m, e = cfg['mosyasu'], cfg['eris']
     eris_img = find_image('eris', 'key')
     eris_visual = f'<img class="gate-art" src="{eris_img}" alt="{esc(e["name"])}">' if eris_img else ''
-    return head(cfg, cfg['site']['title'], cfg['site']['description'], '', 'is-index') + f'''<main class="gate">
+    return head(cfg, cfg['site']['title'], cfg['site']['description'], '', 'is-index', eris_img or 'assets/logo/icon-512.png') + f'''<main class="gate">
   <a class="gate-half gate-blue" href="mosyasu.html">
     <img class="gate-emblem" src="assets/logo/emblem_on_dark.svg" alt="" width="120" height="120">
     <span class="gate-roman">{esc(m["roman"])}</span>
@@ -271,7 +271,8 @@ def page_mosyasu(cfg, data):
 def page_eris(cfg, data):
     e = cfg['eris']
     img = find_image('eris', 'key')
-    visual = f'<img class="hero-art" src="{img}" alt="{esc(e["name"])}">' if img else '<div class="hero-flame" aria-hidden="true">焔</div>'
+    visual = f'<img class="hero-bg" src="{img}" alt="{esc(e["name"])}">' if img else '<div class="hero-flame" aria-hidden="true">焔</div>'
+    hero_cls = 'hero hero-red hero-banner' if img else 'hero hero-red'
     prof = ''.join(f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in e.get('profile', []) if v)
     music = []
     for s in e.get('music', []):
@@ -286,9 +287,9 @@ def page_eris(cfg, data):
     gallery_html = ''
     if gallery:
         gallery_html = '<section class="block" id="gallery"><h2>ギャラリー</h2><div class="gallery">' + ''.join(
-            f'<img src="assets/eris/{esc(g)}" alt="" loading="lazy">' for g in gallery) + '</div></section>'
-    return head(cfg, f'{e["name"]} | {e["roman"]}', e['lead'], 'eris.html', 'is-red') + nav(cfg, 'eris') + f'''<main>
-  <section class="hero hero-red">
+            f'<a href="assets/eris/{esc(g)}" target="_blank" rel="noopener"><img src="assets/eris/{esc(g)}" alt="{esc(e["name"])}" loading="lazy"></a>' for g in gallery) + '</div></section>'
+    return head(cfg, f'{e["name"]} | {e["roman"]}', e['lead'], 'eris.html', 'is-red', img or 'assets/logo/icon-512.png') + nav(cfg, 'eris') + f'''<main>
+  <section class="{hero_cls}">
     <div class="hero-text">
       <p class="eyebrow">{esc(e["roman"])}</p>
       <h1>{esc(e["name"])}</h1>

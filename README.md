@@ -44,6 +44,12 @@ GitHub Pages で無料公開する、模写栖と焔崎エリスの公式サイ�
 - `gallery_01.png`、`gallery_02.png` …: エリスのページの「ギャラリー」に並ぶ
 - 1枚あたり 1MB 以下が目安(サイト全体の上限は 1GB)。大きい絵は WebP に変換すると軽くなる
 
+### 模写栖のページの絵
+`assets/mosyasu/` に置く。`header.webp`(見出しの背景・横長)と `icon.webp`(作り手のアイコン・丸)。差し替えるときは同じ名前で上書きする(png / jpg でも可)。作り手の名前と紹介文は `site.json` の `mosyasu.creator`。
+
+### 制作例(motion で作ったPR動画など)を載せる
+`site.json` の `mosyasu.works` に、題名と YouTube の動画ID(`watch?v=` の後ろの11文字)を入れる。ページ内で再生できる形で「制作例」に並ぶ(押すまで YouTube を読み込まないので重くならない)。縦長の動画は `"vertical": true`。
+
 ### 楽曲・MV を載せる
 `site.json` の `eris.music` に、曲名と YouTube の動画ID(`watch?v=` の後ろの11文字)を入れる。動画IDが空なら、曲名だけ表示される。
 

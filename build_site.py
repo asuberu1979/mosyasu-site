@@ -146,6 +146,18 @@ def nav(cfg, current):
 '''
 
 
+# 制作例の再生ボタンを押したときだけ YouTube を読み込む
+PLAY_JS = '''<script>
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.ytlite'); if (!b) return;
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+  f.title = b.getAttribute('aria-label'); b.replaceWith(f);
+});
+</script>'''
+
+
 def footer(cfg):
     year = datetime.now(JST).year
     return f'''<footer class="foot">
@@ -153,6 +165,7 @@ def footer(cfg):
   <div>© {year} {esc(cfg["mosyasu"]["name"])} ({esc(cfg["mosyasu"]["roman"])})</div>
   <div class="foot-sub">焔崎エリス / Homurasaki Eris は {esc(cfg["mosyasu"]["name"])} のオリジナルキャラクターです。</div>
 </footer>
+{PLAY_JS}
 </body>
 </html>
 '''
@@ -180,6 +193,18 @@ def video_grid(videos, channel_url, empty_label):
   <span class="vdate">{esc(date)}</span>
 </a>''')
     return '<div class="vgrid">' + '\n'.join(cards) + '</div>'
+
+
+def yt_embed(item):
+    """押すまでYouTubeを読み込まない埋め込み(ページが重くならない)"""
+    vid = esc(item['youtube_id'])
+    vert = ' is-vertical' if item.get('vertical') else ''
+    return f'''<figure class="work{vert}">
+  <button class="ytlite" type="button" data-id="{vid}" aria-label="再生: {esc(item.get('title', ''))}">
+    <img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span>
+  </button>
+  <figcaption><b>{esc(item.get('title', ''))}</b>{f"<small>{esc(item['note'])}</small>" if item.get('note') else ''}</figcaption>
+</figure>'''
 
 
 def find_image(folder, stem):
@@ -234,22 +259,43 @@ def page_mosyasu(cfg, data):
     if c.get('email'):
         contact.append(f'<span class="mail">メール: <span class="mono">{esc(c["email"])}</span></span>')
     vids = data.get('mosyasu', {}).get('videos', [])
-    return head(cfg, f'{m["name"]} | {m["catch"]}', m['lead'], 'mosyasu.html', 'is-blue') + nav(cfg, 'mosyasu') + f'''<main>
-  <section class="hero hero-blue">
+    header = find_image('mosyasu', 'header')
+    icon = find_image('mosyasu', 'icon')
+    if header:
+        hero_cls, visual = 'hero hero-blue hero-banner', f'<img class="hero-bg" src="{header}" alt="模写栖の工房">'
+    else:
+        hero_cls, visual = 'hero hero-blue', '<img class="hero-emblem" src="assets/logo/emblem_on_dark.svg" alt="模写栖のエンブレム" width="220" height="220">'
+    cr = m.get('creator', {})
+    creator = ''
+    if cr.get('name'):
+        pic = f'<img class="creator-icon" src="{icon}" alt="{esc(cr["name"])}" width="128" height="128">' if icon else ''
+        creator = f'''<section class="block creator" id="creator">
+    {pic}
+    <div><p class="eyebrow">作り手</p><h2 class="creator-name">{esc(cr["name"])}</h2>
+    {f'<p class="creator-role">{esc(cr["role"])}</p>' if cr.get("role") else ''}{f'<p class="creator-bio">{esc(cr["bio"])}</p>' if cr.get("bio") else ''}</div>
+  </section>'''
+    works = [w for w in m.get('works', []) if w.get('youtube_id')]
+    works_html = f'<section class="block" id="works-pick"><h2>制作例</h2><div class="works">{"".join(yt_embed(w) for w in works)}</div></section>' if works else ''
+    return head(cfg, f'{m["name"]} | {m["catch"]}', m['lead'], 'mosyasu.html', 'is-blue', header or 'assets/logo/icon-512.png') + nav(cfg, 'mosyasu') + f'''<main>
+  <section class="{hero_cls}">
     <div class="hero-text">
       <p class="eyebrow">{esc(m["roman"])}</p>
       <h1>{esc(m["name"])}</h1>
       <p class="catch">{esc(m["catch"])}</p>
       <p class="lead">{esc(m["lead"])}</p>
     </div>
-    <img class="hero-emblem" src="assets/logo/emblem_on_dark.svg" alt="模写栖のエンブレム" width="220" height="220">
+    {visual}
   </section>
+
+  {creator}
 
   <section class="block" id="services">
     <h2>できること</h2>
     <div class="svc-grid">{services}</div>
     {f'<p class="note">{esc(m["price_note"])}</p>' if m.get("price_note") else ''}
   </section>
+
+  {works_html}
 
   <section class="block" id="works">
     <h2>最新の動画</h2>
@@ -279,9 +325,7 @@ def page_eris(cfg, data):
     music = []
     for s in e.get('music', []):
         if s.get('youtube_id'):
-            music.append(f'''<a class="track" href="https://www.youtube.com/watch?v={esc(s["youtube_id"])}" target="_blank" rel="noopener">
-  <img src="https://i.ytimg.com/vi/{esc(s["youtube_id"])}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
-  <span><b>{esc(s["title"])}</b><small>{esc(s.get("note", ""))}</small></span></a>''')
+            music.append(yt_embed(s))
         else:
             music.append(f'<div class="track track-plain"><span><b>{esc(s["title"])}</b><small>{esc(s.get("note", ""))}</small></span></div>')
     vids = data.get('eris', {}).get('videos', [])
@@ -308,7 +352,7 @@ def page_eris(cfg, data):
     {video_grid(vids, e["links"].get("YouTube", ""), "YouTube の焔崎エリスチャンネル")}
   </section>
 
-  {f'<section class="block" id="music"><h2>楽曲</h2><div class="tracks">{"".join(music)}</div></section>' if music else ''}
+  {f'<section class="block" id="music"><h2>楽曲</h2><div class="works">{"".join(music)}</div></section>' if music else ''}
 
   {gallery_html}
 

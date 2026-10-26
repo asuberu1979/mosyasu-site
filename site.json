@@ -1,31 +1,61 @@
 {
   "_説明": "サイトの文言とリンクは、このファイルだけで直せます。空欄(\"\")の項目は、ページに表示されません。書き換えたら GitHub に上げるだけで、数分後にサイトに反映されます。",
-
   "site": {
     "title": "模写栖 / 焔崎エリス",
     "description": "個人スタジオ「模写栖」と、オリジナルキャラクター「焔崎エリス」の公式サイト。",
     "base_url": "https://asuberu1979.github.io/mosyasu-site"
   },
-
   "mosyasu": {
     "name": "模写栖",
     "roman": "MOSYASU",
     "catch": "AIと共に歩む、My World。",
     "lead": "AIと一緒に、映像と物語と道具をつくる個人スタジオです。モーショングラフィックスのPR動画、AI三賢者のYouTubeチャンネル、オリジナルキャラクター「焔崎エリス」の制作をしています。",
+    "creator": {
+      "name": "アスベル",
+      "role": "模写栖の主 / 焔崎エリスの生みの親",
+      "bio": "AIと一緒に、映像・物語・道具をつくっています。"
+    },
     "services": [
       {
         "title": "PR動画(モーショングラフィックス)",
         "body": "文字と図形が動く30秒・60秒のPR動画をお作りします。YouTube向けの横型と、ショート・リール・X向けの縦型に対応。BGMと効果音も、映像の動きに合わせてこちらで用意します。",
-        "tags": ["30秒 / 60秒", "横 16:9 / 縦 9:16", "BGM・効果音込み"]
+        "tags": [
+          "30秒 / 60秒",
+          "横 16:9 / 縦 9:16",
+          "BGM・効果音込み"
+        ]
       },
       {
         "title": "歌詞タイポグラフィ動画",
         "body": "曲に合わせて歌詞が動くリリックビデオをお作りします。完成済みのMVに重ねる、文字だけの透過動画にも対応します。",
-        "tags": ["MVへの重ね合わせ", "透過動画"]
+        "tags": [
+          "MVへの重ね合わせ",
+          "透過動画"
+        ]
       }
     ],
-    "flow": ["ご相談(X のDM・メール)", "お見積り", "制作・確認", "納品"],
+    "flow": [
+      "ご相談(フォーム・X のDM)",
+      "お見積り",
+      "制作・確認",
+      "納品"
+    ],
     "price_note": "料金は内容と尺に応じてお見積りします。",
+    "_works_説明": "制作例。YouTube の動画ID(watch?v= の後ろの11文字)を入れると、ページ内で再生できる形で並ぶ。IDが空の行は表示されない。縦長の動画(ショート)は vertical を true にする",
+    "works": [
+      {
+        "title": "AI三賢者、召喚。",
+        "youtube_id": "",
+        "note": "模写栖 30秒PR / 横 16:9",
+        "vertical": false
+      },
+      {
+        "title": "紅と蒼の指揮者",
+        "youtube_id": "",
+        "note": "アスベル 60秒PR",
+        "vertical": false
+      }
+    ],
     "youtube_handle": "the_mosyasu",
     "youtube_channel_id": "",
     "links": {
@@ -35,23 +65,39 @@
     "contact": {
       "x_dm": "https://x.com/asuberu_lab",
       "email": "",
-      "form": ""
+      "form": "https://docs.google.com/forms/d/e/1FAIpQLSdQNuD3kHe38Bs8phUcWh9nWDUHzOTgwfMFwjUX-xtUTMWvqw/viewform"
     }
   },
-
   "eris": {
     "name": "焔崎エリス",
     "roman": "Homurasaki Eris",
     "catch": "炎は、消えていない。",
     "lead": "静かな声で、内側に炎を持つキャラクター。模写栖のアスベルが生み出した、もうひとりの分身です。",
     "profile": [
-      ["一人称", "私"],
-      ["色", "紅"],
-      ["好きなもの", ""],
-      ["活動", "ショート動画・ミュージックビデオ"]
+      [
+        "一人称",
+        "私"
+      ],
+      [
+        "色",
+        "紅"
+      ],
+      [
+        "好きなもの",
+        ""
+      ],
+      [
+        "活動",
+        "ショート動画・ミュージックビデオ"
+      ]
     ],
     "music": [
-      { "title": "創造の境界線", "youtube_id": "", "note": "歌詞タイポグラフィ版" }
+      {
+        "title": "創造の境界線",
+        "youtube_id": "",
+        "note": "歌詞タイポグラフィ版",
+        "vertical": false
+      }
     ],
     "youtube_handle": "homurasaki_eris",
     "youtube_channel_id": "",
@@ -59,9 +105,9 @@
       "YouTube": "https://www.youtube.com/@homurasaki_eris",
       "X": "https://x.com/homurasaki_eris",
       "Instagram": "https://www.instagram.com/homurasaki_eris/"
-    }
+    },
+    "_music_説明": "楽曲。youtube_id を入れると、ページ内で再生できる形で並ぶ"
   },
-
   "videos": {
     "count_mosyasu": 6,
     "count_eris": 6

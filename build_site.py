@@ -225,10 +225,12 @@ def page_mosyasu(cfg, data):
     flow = ''.join(f'<li><span class="step-n">{i}</span>{esc(s)}</li>' for i, s in enumerate(m.get('flow', []), 1))
     c = m.get('contact', {})
     contact = []
-    if c.get('x_dm'):
-        contact.append(f'<a class="btn btn-blue" href="{esc(c["x_dm"])}" target="_blank" rel="noopener">X のDMで相談する</a>')
+    # フォームがあればそれを主役に、X のDMは控えめに並べる
     if c.get('form'):
-        contact.append(f'<a class="btn" href="{esc(c["form"])}" target="_blank" rel="noopener">相談フォーム</a>')
+        contact.append(f'<a class="btn btn-blue" href="{esc(c["form"])}" target="_blank" rel="noopener">相談フォームを開く</a>')
+    if c.get('x_dm'):
+        cls = 'btn' if c.get('form') else 'btn btn-blue'
+        contact.append(f'<a class="{cls}" href="{esc(c["x_dm"])}" target="_blank" rel="noopener">X のDMで相談する</a>')
     if c.get('email'):
         contact.append(f'<span class="mail">メール: <span class="mono">{esc(c["email"])}</span></span>')
     vids = data.get('mosyasu', {}).get('videos', [])

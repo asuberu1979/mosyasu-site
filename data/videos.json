@@ -1,1 +1,97 @@
-{}
+{
+ "mosyasu": {
+  "channel_id": "UCkJWZEXVEmIWbC5UhIYqp-A",
+  "videos": [
+   {
+    "id": "GJH46_NT5Qc",
+    "title": "撃てないと分かっていて「あの光線」を練習する理由",
+    "published": "2026-10-25",
+    "url": "https://www.youtube.com/shorts/GJH46_NT5Qc",
+    "short": true
+   },
+   {
+    "id": "BymR9mHUtlo",
+    "title": "スカイネットはもう始まっている？AI時代の“思考放棄”あるある【三賢者トーク】",
+    "published": "2026-10-24",
+    "url": "https://www.youtube.com/shorts/BymR9mHUtlo",
+    "short": true
+   },
+   {
+    "id": "yvB-PDGdn0Y",
+    "title": "タイパ重視の努力は「ただの作業」？ AI三賢者が語るコスパあるある",
+    "published": "2026-10-23",
+    "url": "https://www.youtube.com/shorts/yvB-PDGdn0Y",
+    "short": true
+   },
+   {
+    "id": "nN5ErWiQSVE",
+    "title": "野良プラグインで起きがちなWordPressの落とし穴｜“更新通知20件”あるある",
+    "published": "2026-10-22",
+    "url": "https://www.youtube.com/shorts/nN5ErWiQSVE",
+    "short": true
+   },
+   {
+    "id": "JyGdRZS-hSw",
+    "title": "AIあるあるコント：「チャッピー」だけ親近感バフがかかってる説",
+    "published": "2026-10-21",
+    "url": "https://www.youtube.com/shorts/JyGdRZS-hSw",
+    "short": true
+   },
+   {
+    "id": "uhyaj2j-6Yo",
+    "title": "【あるある風刺】AIバトルの裏側、ただの「人間の代理戦」でした",
+    "published": "2026-10-20",
+    "url": "https://www.youtube.com/shorts/uhyaj2j-6Yo",
+    "short": true
+   }
+  ]
+ },
+ "eris": {
+  "channel_id": "UC_pXIrPvDnhfno6WDzU4OJQ",
+  "videos": [
+   {
+    "id": "eb0IA5dvKe4",
+    "title": "「名前のない支柱」 #焔崎エリス",
+    "published": "2026-09-11",
+    "url": "https://www.youtube.com/shorts/eb0IA5dvKe4",
+    "short": true
+   },
+   {
+    "id": "NCyuiKxKCck",
+    "title": "「何者にでもなれたはずの日」 #焔崎エリス",
+    "published": "2026-09-08",
+    "url": "https://www.youtube.com/shorts/NCyuiKxKCck",
+    "short": true
+   },
+   {
+    "id": "ob-BDkP2_HU",
+    "title": "「仮面の裏側は無言だった」 1 #焔崎エリス",
+    "published": "2026-09-06",
+    "url": "https://www.youtube.com/shorts/ob-BDkP2_HU",
+    "short": true
+   },
+   {
+    "id": "gTMo15zGaYA",
+    "title": "【作業用BGM】深く集中できる幻想アンビエント＆432Hzヒーリング（1時間耐久）",
+    "published": "2026-09-05",
+    "url": "https://www.youtube.com/watch?v=gTMo15zGaYA",
+    "short": false
+   },
+   {
+    "id": "Ijd8AICEJAU",
+    "title": "「背負い続けた鎧」 #焔崎エリス",
+    "published": "2026-09-03",
+    "url": "https://www.youtube.com/shorts/Ijd8AICEJAU",
+    "short": true
+   },
+   {
+    "id": "-GhTnTmhGSo",
+    "title": "「昇進通知の朝」 #焔崎エリス",
+    "published": "2026-09-01",
+    "url": "https://www.youtube.com/shorts/-GhTnTmhGSo",
+    "short": true
+   }
+  ]
+ },
+ "heartbeat": "2026-10"
+}

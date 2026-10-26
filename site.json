@@ -57,13 +57,15 @@
         "お預かりした文章・画像・ご連絡先は、AIのサービスに送りません。手元のプログラムだけで動画にします。"
       ]
     },
-    "_works_説明": "制作例。YouTube の動画ID(watch?v= の後ろの11文字)を入れると、ページ内で再生できる形で並ぶ。IDが空の行は表示されない。縦長の動画(ショート)は vertical を true にする",
+    "_works_説明": "制作例。YouTube の動画ID(watch?v= の後ろの11文字)か、assets/video/ に置いた動画ファイル(file と poster)を入れると、ページ内で再生できる形で並ぶ。どちらも空の行は表示されない。縦長の動画は vertical を true にする。動画ファイルは1本30MB以下が目安",
     "works": [
       {
         "title": "VSCodeで、PR動画をつくる。",
         "youtube_id": "",
         "note": "制作の様子と、PERSONA(自己紹介PR動画)の紹介 / 72秒",
-        "vertical": false
+        "vertical": false,
+        "file": "assets/video/persona_demo.mp4",
+        "poster": "assets/video/persona_demo.jpg"
       },
       {
         "title": "AI三賢者、召喚。",

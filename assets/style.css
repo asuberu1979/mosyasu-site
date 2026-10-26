@@ -199,13 +199,14 @@ h2::before { content: ""; width: 8px; height: 8px; transform: rotate(45deg); bac
 /* 制作例・楽曲(押すと再生) */
 .works { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; align-items: start; }
 .work { margin: 0; display: grid; gap: 8px; }
+#works-pick .works > .work:first-child:not(.is-vertical) { grid-column: 1 / -1; max-width: 880px; }  /* 先頭の1本は大きく */
 .ytlite { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); cursor: pointer; aspect-ratio: 16 / 9; }
 .ytlite img { width: 100%; height: 100%; object-fit: cover; }
 .ytlite .play { position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 88%, black); box-shadow: 0 4px 20px rgba(0, 0, 0, .5); transition: transform .2s ease; }
 .ytlite .play::after { content: ""; position: absolute; left: 27px; top: 14px; border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #fff; }
 .ytlite:hover .play { transform: scale(1.08); }
-.work iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
-.work.is-vertical .ytlite, .work.is-vertical iframe { aspect-ratio: 9 / 16; width: min(100%, 300px); }
+.work iframe, .work .selfvideo { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; background: #000; display: block; }
+.work.is-vertical .ytlite, .work.is-vertical iframe, .work.is-vertical .selfvideo { aspect-ratio: 9 / 16; width: min(100%, 300px); }
 .work figcaption { display: grid; }
 .work figcaption b { font: 700 17px var(--display); }
 .work figcaption small { color: var(--muted); font-size: 13px; }

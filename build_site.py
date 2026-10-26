@@ -207,6 +207,20 @@ def yt_embed(item):
 </figure>'''
 
 
+def video_embed(item):
+    """サイトに置いた動画ファイル(assets/video/)をそのまま再生する"""
+    vert = ' is-vertical' if item.get('vertical') else ''
+    poster = f' poster="{esc(item["poster"])}"' if item.get('poster') else ''
+    return f'''<figure class="work{vert}">
+  <video class="selfvideo" controls preload="none" playsinline{poster}><source src="{esc(item['file'])}" type="video/mp4"></video>
+  <figcaption><b>{esc(item.get('title', ''))}</b>{f"<small>{esc(item['note'])}</small>" if item.get('note') else ''}</figcaption>
+</figure>'''
+
+
+def work_embed(item):
+    return video_embed(item) if item.get('file') else yt_embed(item)
+
+
 def find_image(folder, stem):
     for ext in ('webp', 'png', 'jpg', 'jpeg'):
         p = ROOT / 'assets' / folder / f'{stem}.{ext}'
@@ -274,12 +288,12 @@ def page_mosyasu(cfg, data):
     <div><p class="eyebrow">作り手</p><h2 class="creator-name">{esc(cr["name"])}</h2>
     {f'<p class="creator-role">{esc(cr["role"])}</p>' if cr.get("role") else ''}{f'<p class="creator-bio">{esc(cr["bio"])}</p>' if cr.get("bio") else ''}</div>
   </section>'''
-    works = [w for w in m.get('works', []) if w.get('youtube_id')]
+    works = [w for w in m.get('works', []) if w.get('youtube_id') or w.get('file')]
     pn = m.get('production_note') or {}
     prod_html = ''
     if pn.get('items'):
         prod_html = f'<div class="prod-note"><h3>{esc(pn.get("title", ""))}</h3><ul>' + ''.join(f'<li>{esc(x)}</li>' for x in pn['items']) + '</ul></div>'
-    works_html = f'<section class="block" id="works-pick"><h2>制作例</h2><div class="works">{"".join(yt_embed(w) for w in works)}</div></section>' if works else ''
+    works_html = f'<section class="block" id="works-pick"><h2>制作例</h2><div class="works">{"".join(work_embed(w) for w in works)}</div></section>' if works else ''
     return head(cfg, f'{m["name"]} | {m["catch"]}', m['lead'], 'mosyasu.html', 'is-blue', header or 'assets/logo/icon-512.png') + nav(cfg, 'mosyasu') + f'''<main>
   <section class="{hero_cls}">
     <div class="hero-text">

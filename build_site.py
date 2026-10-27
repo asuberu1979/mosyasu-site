@@ -352,6 +352,10 @@ def page_eris(cfg, data):
     <div class="ess">{side(es["outer"], "is-outer")}{side(es["inner"], "is-inner")}</div>
     {f'<p class="ess-motto">{esc(es["motto"])}</p>' if es.get("motto") else ''}
   </section>'''
+    intro = e.get('intro') or {}
+    intro_html = ''
+    if intro.get('file') or intro.get('youtube_id'):
+        intro_html = f'<section class="block intro" id="intro"><h2>紹介動画</h2><div class="works">{work_embed(intro)}</div></section>'
     quotes = e.get('quotes') or []
     quotes_html = ''
     if quotes:
@@ -379,6 +383,8 @@ def page_eris(cfg, data):
     </div>
     {visual}
   </section>
+
+  {intro_html}
 
   {essence}
 

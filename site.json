@@ -97,6 +97,14 @@
     "roman": "Homurasaki Eris",
     "catch": "炎は、消えていない。",
     "lead": "静かな声で、内側に炎を持つキャラクター。模写栖のアスベルが生み出した、もうひとりの分身です。",
+    "_intro_説明": "紹介動画。見出しのすぐ下に大きく出る。file(assets/video/ の動画)か youtube_id のどちらかを入れる",
+    "intro": {
+      "title": "焔崎エリス 紹介",
+      "file": "assets/video/eris_intro.mp4",
+      "poster": "assets/video/eris_intro.jpg",
+      "youtube_id": "",
+      "note": "30秒"
+    },
     "_essence_説明": "人物像。外側(静)と内側(炎)の2枚で並ぶ。設定資料 Eris_motion/eris_persona.md から",
     "essence": {
       "summary": "熱を内側に封じた、静かな人格。冷たいのではなく、感情を制御している。",

@@ -324,6 +324,7 @@ def page_mosyasu(cfg, data):
   <section class="block" id="flow">
     <h2>ご依頼の流れ</h2>
     <ol class="flow">{flow}</ol>
+    {f'<div class="works flow-video">{work_embed(m["flow_video"])}</div>' if (m.get("flow_video") or {}).get("file") or (m.get("flow_video") or {}).get("youtube_id") else ''}
     <div class="contact">{"".join(contact)}</div>
   </section>
 

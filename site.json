@@ -49,6 +49,13 @@
       "制作・確認",
       "納品"
     ],
+    "_flow_video_説明": "ご依頼の流れの動画。「ご依頼の流れ」の欄に、相談ボタンの上に出る",
+    "flow_video": {
+      "title": "ご相談から納品まで",
+      "file": "assets/video/order_guide.mp4",
+      "poster": "assets/video/order_guide.jpg",
+      "note": "60秒"
+    },
     "price_note": "料金は内容と尺に応じてお見積りします。",
     "production_note": {
       "title": "制作とお預かりする情報について",

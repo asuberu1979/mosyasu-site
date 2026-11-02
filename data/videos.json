@@ -3,6 +3,34 @@
   "channel_id": "UCkJWZEXVEmIWbC5UhIYqp-A",
   "videos": [
    {
+    "id": "XTyWw966QI0",
+    "title": "選ばれない理由はAIだけが知ってる説【就活あるある／三賢者】",
+    "published": "2026-11-01",
+    "url": "https://www.youtube.com/shorts/XTyWw966QI0",
+    "short": true
+   },
+   {
+    "id": "kKhL8KNmT7E",
+    "title": "速報、見た時にはもう終わってる…あるある",
+    "published": "2026-10-31",
+    "url": "https://www.youtube.com/shorts/kKhL8KNmT7E",
+    "short": true
+   },
+   {
+    "id": "6AI0wNncT-k",
+    "title": "AIが語る、AIと作ったもの全部｜Claudeとの制作記録【模写栖】",
+    "published": "2026-10-31",
+    "url": "https://www.youtube.com/watch?v=6AI0wNncT-k",
+    "short": false
+   },
+   {
+    "id": "jP5f7_49CWc",
+    "title": "ChatGPT「プロンプトを書く人間、欲望を書き換えるAI」｜三賢者のあるある対話",
+    "published": "2026-10-30",
+    "url": "https://www.youtube.com/shorts/jP5f7_49CWc",
+    "short": true
+   },
+   {
     "id": "U54hMnV1HNE",
     "title": "人間が復旧に追われる「0 1秒」のあいだにAIがやってそうなこと【あるある風コント】",
     "published": "2026-10-29",
@@ -15,40 +43,19 @@
     "published": "2026-10-28",
     "url": "https://www.youtube.com/shorts/y75qKuUtsRw",
     "short": true
-   },
-   {
-    "id": "B6o0d6snmCs",
-    "title": "断捨離できない人が実は「未来を信用していない」理由【あるある会話劇】",
-    "published": "2026-10-27",
-    "url": "https://www.youtube.com/shorts/B6o0d6snmCs",
-    "short": true
-   },
-   {
-    "id": "nsBv3SFI9c4",
-    "title": "「『低気圧のせい』は現代人あるあるの“合法的な言い訳”？」",
-    "published": "2026-10-26",
-    "url": "https://www.youtube.com/shorts/nsBv3SFI9c4",
-    "short": true
-   },
-   {
-    "id": "GJH46_NT5Qc",
-    "title": "撃てないと分かっていて「あの光線」を練習する理由",
-    "published": "2026-10-25",
-    "url": "https://www.youtube.com/shorts/GJH46_NT5Qc",
-    "short": true
-   },
-   {
-    "id": "BymR9mHUtlo",
-    "title": "スカイネットはもう始まっている？AI時代の“思考放棄”あるある【三賢者トーク】",
-    "published": "2026-10-24",
-    "url": "https://www.youtube.com/shorts/BymR9mHUtlo",
-    "short": true
    }
   ]
  },
  "eris": {
   "channel_id": "UC_pXIrPvDnhfno6WDzU4OJQ",
   "videos": [
+   {
+    "id": "KV35KVmHv8c",
+    "title": "創造の境界線 ―創られた世界の証明―｜焔崎エリス Character Song",
+    "published": "2026-10-31",
+    "url": "https://www.youtube.com/watch?v=KV35KVmHv8c",
+    "short": false
+   },
    {
     "id": "eb0IA5dvKe4",
     "title": "「名前のない支柱」 #焔崎エリス",
@@ -82,13 +89,6 @@
     "title": "「背負い続けた鎧」 #焔崎エリス",
     "published": "2026-09-03",
     "url": "https://www.youtube.com/shorts/Ijd8AICEJAU",
-    "short": true
-   },
-   {
-    "id": "-GhTnTmhGSo",
-    "title": "「昇進通知の朝」 #焔崎エリス",
-    "published": "2026-09-01",
-    "url": "https://www.youtube.com/shorts/-GhTnTmhGSo",
     "short": true
    }
   ]

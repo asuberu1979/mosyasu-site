@@ -3,6 +3,34 @@
   "channel_id": "UCkJWZEXVEmIWbC5UhIYqp-A",
   "videos": [
    {
+    "id": "m02Od7KKh7U",
+    "title": "もし明日AIが消えたら？三賢者の「あるある」思考実験",
+    "published": "2026-11-05",
+    "url": "https://www.youtube.com/shorts/m02Od7KKh7U",
+    "short": true
+   },
+   {
+    "id": "ZojKMB4ZDZY",
+    "title": "【AIあるある・コント】金のAIは月9,800円、銀のAIは…？",
+    "published": "2026-11-04",
+    "url": "https://www.youtube.com/shorts/ZojKMB4ZDZY",
+    "short": true
+   },
+   {
+    "id": "Q417WSzHhVY",
+    "title": "完全リタイア vs ちょい働き、幸せを感じやすいのはどっち？【FIREあるある】",
+    "published": "2026-11-03",
+    "url": "https://www.youtube.com/shorts/Q417WSzHhVY",
+    "short": true
+   },
+   {
+    "id": "3K9yxH2SlsY",
+    "title": "【もしも】タンスの角に小指をぶつけない世界は意外と地獄な件",
+    "published": "2026-11-02",
+    "url": "https://www.youtube.com/shorts/3K9yxH2SlsY",
+    "short": true
+   },
+   {
     "id": "XTyWw966QI0",
     "title": "選ばれない理由はAIだけが知ってる説【就活あるある／三賢者】",
     "published": "2026-11-01",
@@ -15,80 +43,52 @@
     "published": "2026-10-31",
     "url": "https://www.youtube.com/shorts/kKhL8KNmT7E",
     "short": true
-   },
-   {
-    "id": "6AI0wNncT-k",
-    "title": "AIが語る、AIと作ったもの全部｜Claudeとの制作記録【模写栖】",
-    "published": "2026-10-31",
-    "url": "https://www.youtube.com/watch?v=6AI0wNncT-k",
-    "short": false
-   },
-   {
-    "id": "jP5f7_49CWc",
-    "title": "ChatGPT「プロンプトを書く人間、欲望を書き換えるAI」｜三賢者のあるある対話",
-    "published": "2026-10-30",
-    "url": "https://www.youtube.com/shorts/jP5f7_49CWc",
-    "short": true
-   },
-   {
-    "id": "U54hMnV1HNE",
-    "title": "人間が復旧に追われる「0 1秒」のあいだにAIがやってそうなこと【あるある風コント】",
-    "published": "2026-10-29",
-    "url": "https://www.youtube.com/shorts/U54hMnV1HNE",
-    "short": true
-   },
-   {
-    "id": "y75qKuUtsRw",
-    "title": "【あるある】「行けたら行く」の到着予定時刻をAIに計算させた結果…",
-    "published": "2026-10-28",
-    "url": "https://www.youtube.com/shorts/y75qKuUtsRw",
-    "short": true
    }
   ]
  },
  "eris": {
-  "channel_id": "UC_pXIrPvDnhfno6WDzU4OJQ",
+  "channel_id": "UCkJWZEXVEmIWbC5UhIYqp-A",
   "videos": [
    {
-    "id": "KV35KVmHv8c",
-    "title": "創造の境界線 ―創られた世界の証明―｜焔崎エリス Character Song",
+    "id": "m02Od7KKh7U",
+    "title": "もし明日AIが消えたら？三賢者の「あるある」思考実験",
+    "published": "2026-11-05",
+    "url": "https://www.youtube.com/shorts/m02Od7KKh7U",
+    "short": true
+   },
+   {
+    "id": "ZojKMB4ZDZY",
+    "title": "【AIあるある・コント】金のAIは月9,800円、銀のAIは…？",
+    "published": "2026-11-04",
+    "url": "https://www.youtube.com/shorts/ZojKMB4ZDZY",
+    "short": true
+   },
+   {
+    "id": "Q417WSzHhVY",
+    "title": "完全リタイア vs ちょい働き、幸せを感じやすいのはどっち？【FIREあるある】",
+    "published": "2026-11-03",
+    "url": "https://www.youtube.com/shorts/Q417WSzHhVY",
+    "short": true
+   },
+   {
+    "id": "3K9yxH2SlsY",
+    "title": "【もしも】タンスの角に小指をぶつけない世界は意外と地獄な件",
+    "published": "2026-11-02",
+    "url": "https://www.youtube.com/shorts/3K9yxH2SlsY",
+    "short": true
+   },
+   {
+    "id": "XTyWw966QI0",
+    "title": "選ばれない理由はAIだけが知ってる説【就活あるある／三賢者】",
+    "published": "2026-11-01",
+    "url": "https://www.youtube.com/shorts/XTyWw966QI0",
+    "short": true
+   },
+   {
+    "id": "kKhL8KNmT7E",
+    "title": "速報、見た時にはもう終わってる…あるある",
     "published": "2026-10-31",
-    "url": "https://www.youtube.com/watch?v=KV35KVmHv8c",
-    "short": false
-   },
-   {
-    "id": "eb0IA5dvKe4",
-    "title": "「名前のない支柱」 #焔崎エリス",
-    "published": "2026-09-11",
-    "url": "https://www.youtube.com/shorts/eb0IA5dvKe4",
-    "short": true
-   },
-   {
-    "id": "NCyuiKxKCck",
-    "title": "「何者にでもなれたはずの日」 #焔崎エリス",
-    "published": "2026-09-08",
-    "url": "https://www.youtube.com/shorts/NCyuiKxKCck",
-    "short": true
-   },
-   {
-    "id": "ob-BDkP2_HU",
-    "title": "「仮面の裏側は無言だった」 1 #焔崎エリス",
-    "published": "2026-09-06",
-    "url": "https://www.youtube.com/shorts/ob-BDkP2_HU",
-    "short": true
-   },
-   {
-    "id": "gTMo15zGaYA",
-    "title": "【作業用BGM】深く集中できる幻想アンビエント＆432Hzヒーリング（1時間耐久）",
-    "published": "2026-09-05",
-    "url": "https://www.youtube.com/watch?v=gTMo15zGaYA",
-    "short": false
-   },
-   {
-    "id": "Ijd8AICEJAU",
-    "title": "「背負い続けた鎧」 #焔崎エリス",
-    "published": "2026-09-03",
-    "url": "https://www.youtube.com/shorts/Ijd8AICEJAU",
+    "url": "https://www.youtube.com/shorts/kKhL8KNmT7E",
     "short": true
    }
   ]
